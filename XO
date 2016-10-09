@@ -1,0 +1,90 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class XO {
+    static String a = "1";
+    static int count = 0;
+    static String b = "2";
+    static String c = "3";
+    static String d = "4";
+    static String e = "5";
+    static String f = "6";
+    static String g = "7";
+    static String h = "8";
+    static String i = "9";
+    static boolean k = false;
+    static boolean l = false;
+    public static void main(String[] args) throws Exception {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("---------------");
+        System.out.println(" | " + a+ " | " + b+" | "+c+" | ");
+        System.out.println(" | " + d+ " | " + e+" | "+f+" | ");
+        System.out.println(" | " + g+ " | " + h+" | "+i+" | ");
+        System.out.println("---------------");
+        while (!k&&count<9)
+        {System.out.println("Хід першого гравця!");
+            int x = Integer.parseInt(reader.readLine());
+            hodx(x);
+            count++;
+            if (!k&&count<9)
+            {System.out.println("Хід другого гравця!");
+                int y = Integer.parseInt(reader.readLine());
+            hody(y);
+            count++;}
+        }
+        if (count==9)
+        {
+            System.out.print("Нічия!");
+        }
+
+    }
+
+   private static void hodx(int x) {
+       l = false;
+       if (x==1&&!(a.equals("0"))&&!(a.equals("0"))) {a = "X";}
+       else if (x==2&&!(b.equals("0"))&&!(b.equals("0"))) {b = "X";}
+       else if (x==3&&!(c.equals("0"))&&!(c.equals("0"))) {c = "X";}
+       else if (x==4&&!(d.equals("0"))&&!(d.equals("0"))) {d = "X";}
+       else if (x==5&&!(e.equals("0"))&&!(e.equals("0"))) {e = "X";}
+       else if (x==6&&!(f.equals("0"))&&!(f.equals("0"))) {f = "X";}
+       else if (x==7&&!(g.equals("0"))&&!(g.equals("0"))) {g = "X";}
+       else if (x==8&&!(h.equals("0"))&&!(h.equals("0"))) {h = "X";}
+       else if (x==9&&!(i.equals("0"))&&!(i.equals("0"))) {i = "X";}
+       else {System.out.println("Хід неможливий!");
+       l = true;}
+        System.out.println("---------------");
+        System.out.println(" | " + a+ " | " + b+" | "+c+" | ");
+        System.out.println(" | " + d+ " | " + e+" | "+f+" | ");
+        System.out.println(" | " + g+ " | " + h+" | "+i+" | ");
+        System.out.println("---------------");
+   if((a.equals(b)&&b.equals(c)&&c.equals("X"))||(d.equals(e)&&e.equals(f)&&f.equals("X"))||(g.equals(h)&&h.equals(i)&&i.equals("X"))||(a.equals(d)&&d.equals(g)&&g.equals("X"))||(b.equals(e)&&e.equals(h)&&h.equals("X"))||(c.equals(f)&&f.equals(i)&&i.equals("X"))||(a.equals(e)&&e.equals(i)&&i.equals("X"))||(c.equals(e)&&e.equals(g)&&g.equals("X")))
+   {
+       k = true;
+       System.out.println("Перемога перщого гравця!");
+   }
+   }
+    private static void hody(int y) {
+        l = false;
+        if (y==1&&!(a.equals("X"))&&!(a.equals("0"))) {a = "0";}
+        else if (y==2&&!(b.equals("X"))&&!(b.equals("0"))) {b = "0";}
+        else if (y==3&&!(c.equals("X"))&&!(c.equals("0"))) {c = "0";}
+        else if (y==4&&!(d.equals("X"))&&!(d.equals("0"))) {d = "0";}
+        else if (y==5&&!(e.equals("X"))&&!(e.equals("0"))) {e = "0";}
+        else if (y==6&&!(f.equals("X"))&&!(f.equals("0"))) {f = "0";}
+        else if (y==7&&!(g.equals("X"))&&!(g.equals("0"))) {g = "0";}
+        else if (y==8&&!(h.equals("X"))&&!(h.equals("0"))) {h = "0";}
+        else if (y==9&&!(i.equals("X"))&&!(i.equals("0"))) {i = "0";}
+        else {System.out.println("Хід неможливий!");
+        l = true;}
+        System.out.println("---------------");
+        System.out.println("| " + a+ " | " + b+" | "+c+" | ");
+        System.out.println("| " + d+ " | " + e+" | "+f+" | ");
+        System.out.println("| " + g+ " | " + h+" | "+i+" | ");
+        System.out.println("---------------");
+        if((a.equals(b)&&b.equals(c)&&c.equals("0"))||(d.equals(e)&&e.equals(f)&&f.equals("0"))||(g.equals(h)&&h.equals(i)&&i.equals("0"))||(a.equals(d)&&d.equals(g)&&g.equals("0"))||(b.equals(e)&&e.equals(h)&&h.equals("0"))||(c.equals(f)&&f.equals(i)&&i.equals("0"))||(a.equals(e)&&e.equals(i)&&i.equals("0"))||(c.equals(e)&&e.equals(g)&&g.equals("0")))
+        {
+            k = true;
+            System.out.println("Перемога другого гравця!");
+        }
+    }
+    }
